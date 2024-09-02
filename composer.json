@@ -1,0 +1,12 @@
+ {
+    "name": "leeandri/phpenny",
+    "description": "Une application PHP pour suivre les dépenses.",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\" : "src/Framework",
+            "App\\" : "src/App"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include __DIR__ . "/../src/App/functions.php";
 

@@ -12,7 +12,7 @@ class MinRule implements RuleInterface
     public function validate(array $data, string $field, array $params): bool
     {
         if (empty($params[0])) {
-            throw new InvalidArgumentException("Longueur minimum non spécifié");
+            throw new InvalidArgumentException("Valeur minimale non spécifié");
         }
 
         $length = (int) $params[0];

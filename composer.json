@@ -2,7 +2,9 @@
     "name": "leeandri/phpenny",
     "description": "Une application PHP pour suivre les dépenses.",
     "type": "project",
-    "require": {},
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
     "autoload": {
         "psr-4": {
             "Framework\\": "src/Framework",

@@ -35,11 +35,19 @@ class ValidatorService
         $this->validator->validate($formData, [
             'email' => ['required', 'email'],
             'age' => ['required', 'min:18'],
-            'country' => ['required', 'in:Madagascar,Japon,Canada'],
+            'country' => ['required', 'in:USA,Japon,Madagascar'],
             'socialMediaURL' => ['required', 'url'],
             'password' => ['required'],
             'confirmPassword' => ['required', 'match:password'],
             'tos' => ['required']
+        ]);
+    }
+
+    public function validateLogin(array $formData)
+    {
+        $this->validator->validate($formData, [
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
     }
 }

@@ -3,6 +3,8 @@
 <section
     class="max-w-2xl mx-auto mt-12 p-4 bg-white shadow-md border border-gray-200 rounded">
     <form method="POST" class="grid grid-cols-1 gap-6">
+        <?php include $this->resolve("partials/_csrf.php"); ?>
+
         <!-- Email -->
         <label class="block">
             <span class="text-gray-700">Email</span>
@@ -35,16 +37,14 @@
         </label>
         <!-- Country -->
         <label class="block">
-            <span class="text-gray-700">Pays</span>
-            <select
-                name="country"
-                class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option value="Madagascar">Madagascar</option>
-                <option value="Canada" <?php echo $oldFormData['country'] === 'Canada' ? 'selected' : ''; ?>>Canada</option>
-                <option value="Japon" <?php echo $oldFormData['country'] === 'Mexico' ? 'selected' : ''; ?>>Japon</option>
-                <option value="Invalid">Pays invalide</option>
+            <span class="text-gray-700">Country</span>
+            <select name="country" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <option value="USA">USA</option>
+                <option value="Canada" <?php echo isset($oldFormData['country']) && $oldFormData['country'] === 'Japon' ? 'selected' : ''; ?>>Japon</option>
+                <option value="Mexico" <?php echo isset($oldFormData['country']) && $oldFormData['country'] === 'Madagascar' ? 'selected' : ''; ?>>Madagascar</option>
+                <option value="Invalid">Invalid Country</option>
             </select>
-            <?php if (array_key_exists('country', $errors)): ?>
+            <?php if (array_key_exists('country', $errors)) : ?>
                 <div class="bg-gray-100 mt-2 p-2 text-red-500">
                     <?php echo e($errors['country'][0]); ?>
                 </div>

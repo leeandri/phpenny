@@ -37,12 +37,12 @@
         </label>
         <!-- Country -->
         <label class="block">
-            <span class="text-gray-700">Country</span>
+            <span class="text-gray-700">Pays</span>
             <select name="country" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="USA">USA</option>
                 <option value="Japon" <?php echo isset($oldFormData['country']) && $oldFormData['country'] === 'Japon' ? 'selected' : ''; ?>>Japon</option>
                 <option value="Madagascar" <?php echo isset($oldFormData['country']) && $oldFormData['country'] === 'Madagascar' ? 'selected' : ''; ?>>Madagascar</option>
-                <option value="Invalid">Invalid Country</option>
+                <option value="Invalid">Pays non valide</option>
             </select>
             <?php if (array_key_exists('country', $errors)) : ?>
                 <div class="bg-gray-100 mt-2 p-2 text-red-500">
